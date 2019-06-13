@@ -4,13 +4,38 @@
 <head>
   <title>Quotes App</title>
   <script src="src/vue.js"></script>
+  <link rel="stylesheet" href="quotes.css">
 </head>
 <body>
-  <div id="app">
-    <h1> Vue.js get Data From JSON File</h1>
-  <div v-for="movie in quotes">
-    Quote : {{ movie.quote }}
-  </div>
+  <div class="container" id="app">
+      <div class="search-wrapper">
+          <input type="text" v-model="search" placeholder="Search keyword.."/>
+      </div>
+       
+          <div class="filter">
+              <label><input type="radio" v-model="selectedCategory" value="All" /> All</label>
+            <label><input type="radio" v-model="selectedCategory" value="movies" /> Movies</label>
+            <label><input type="radio" v-model="selectedCategory" value="games" /> Games</label>
+          </div>
+        
+
+          <ul>
+              <li v-for="media in paginatedData">
+                "{{media.quote}} " - 
+                {{media.source}} || 
+                {{media.theme}}
+              </li>
+            </ul>
+            <button @click="prevPage">
+              Previous
+            </button>
+            <button @click="nextPage">
+              Next
+            </button>
+
+         
+        
+       
   </div>
   <script src="src/app.js"></script>
 </body>
