@@ -1,1 +1,1 @@
-quotes_app
+A Vue app that sorts through a JSON file containing quotes. This app provides search functionality through categorization and a search bar, along with paging that allows up to 15 quotes per page. To run the application, simply open the quotes.html file in the browser of your choice
